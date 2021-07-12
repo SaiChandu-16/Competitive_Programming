@@ -7,4 +7,6 @@
 
 def handtodice(hand):
 	# your code goes here
-	pass
+	a =str(hand)
+	b = tuple(map(int,list(a)))
+	return b
