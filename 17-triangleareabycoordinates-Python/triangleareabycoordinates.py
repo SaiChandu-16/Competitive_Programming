@@ -6,4 +6,8 @@
 
 def triangleareabycoordinates(x1, y1, x2, y2, x3, y3):
 	# your code goes here
-	pass
+	a = x1*(y2-y3)
+	b = x3*(y1-y2)
+	c = x2*(y3-y1)
+	area = 0.5*abs((a+b+c))
+	return area
