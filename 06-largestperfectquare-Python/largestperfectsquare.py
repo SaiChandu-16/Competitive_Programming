@@ -9,4 +9,11 @@
 
 def largestperfectsquare(n):
 	# your code goes here
-	pass
+	a = []
+	for i in range(1,n+1):
+		if(i**(0.5) == int(i**(0.5)) and i<=n):
+			a.append(i)
+	b = a[::-1]
+	# print(b)
+	return b[0]
+# print(largestperfectsquare(int(input())))
