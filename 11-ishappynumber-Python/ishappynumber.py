@@ -19,4 +19,26 @@
 
 def ishappynumber(n):
 	# your code goes here
-	pass
+	if(n<0):
+		return False
+	elif(n==1):
+		return True
+	while (n>=10):
+		n=digitSumSquare(n)
+		if(n==1):
+			return True
+	return False
+		
+
+	
+
+def digitSumSquare(n):
+	b = 0
+	while(n>0):
+		a = n%10
+		b = b+(a*a)
+		n = n//10
+		
+	return b		
+
+
