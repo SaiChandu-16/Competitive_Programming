@@ -16,4 +16,40 @@
 
 
 def nth_happy_number(n):
-	return 0
+	if(n == 1):
+		return 1
+	elif(n == 2):
+		return 7
+	x = 2
+	y = 8
+	while(x<=n):
+		if(ishappynumber(y)):
+			x = x+1
+		
+		if(x == n):
+			return y
+		y = y+1
+
+def ishappynumber(n):
+	# your code goes here
+	if(n<0):
+		return False
+	elif(n==1):
+		return True
+	while (n>=10):
+		n=digitSumSquare(n)
+		if(n==1):
+			return True
+	return False
+		
+
+	
+
+def digitSumSquare(n):
+	b = 0
+	while(n>0):
+		a = n%10
+		b = b+(a*a)
+		n = n//10
+		
+	return b
