@@ -20,17 +20,21 @@ def ismostlymagicsquare(a):
 		return True
 	sumofd1 = 0
 	sumofd2 = 0
-	for i in range(n):
-		sumofd1+=a[i][i]
-		sumofd2+=a[i][n-i-1]
 	sumofrow = 0
 	sumofcol = 0
 	for i in range(n):
-		
-		for j in range(n):
-			sumofrow+=a[i][j]
-			sumofcol+=a[j][i]
-		return (sumofrow == sumofcol == sumofd1 == sumofd2)
+		sumofd1+=a[i][i]
+		sumofd2+=a[i][n-i-1]
+	if(sumofd1 != sumofd2):
+		return False
+	else:
+	
+		for i in range(n):
+			
+			for j in range(n):
+				sumofrow+=a[i][j]
+				sumofcol+=a[j][i]
+			return (sumofrow == sumofcol == sumofd1 == sumofd2)
 		
 		
 			
