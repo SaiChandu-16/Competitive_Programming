@@ -10,5 +10,15 @@
 
 
 def fun_getaverage(s): 
-	return 0.0
+	sum=0
+	denomin=0
+	for i in s.split(","):
+		if i.isnumeric():
+			sum+=float(i)
+			denomin+=1
+
+	if denomin==0:
+		return 0.0
+	return sum/denomin
+
 
