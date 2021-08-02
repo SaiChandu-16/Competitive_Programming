@@ -11,4 +11,41 @@
 # functions to make nthHappyNumber(n) easier to write!
 def ishappyprimenumber(n):
     # Your code goes here
-    pass
+    if(ishappynumber(n) and isPrime(n)):
+        return True
+    return False
+def isPrime(n):
+    if (n < 2):
+        return False
+    if (n == 2):
+        return True
+    if (n % 2 == 0):
+        return False
+    maxFactor = round(n**0.5)
+    for factor in range(3,maxFactor+1,2):
+        if (n % factor == 0):
+            return False
+    return True
+def ishappynumber(n):
+	# your code goes here
+	if(n<0):
+		return False
+	elif(n==1):
+		return True
+	while (n>=10):
+		n=digitSumSquare(n)
+		if(n==1):
+			return True
+	return False
+		
+
+	
+
+def digitSumSquare(n):
+	b = 0
+	while(n>0):
+		a = n%10
+		b = b+(a*a)
+		n = n//10
+		
+	return b
