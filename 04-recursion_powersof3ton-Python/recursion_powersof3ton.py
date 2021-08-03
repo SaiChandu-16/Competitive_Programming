@@ -5,18 +5,21 @@
 
 def recursion_powersof3ton(n):
 	# Your code goes here
+	
+	
+	
+ 
+	def powerof3ton(n,i=0,lst=[]):
+		if n<=0:
+			return None
+		elif 3**i>n:
+			return lst
+		else:
+			if 3**i<=n:
+				lst.append(3**i)
+			return powerof3ton(n,i+1,lst)
 	n=int(n)
 	lst=powerof3ton(n)
 	return lst
- 
-def powerof3ton(n,i=0,lst=[]):
-    if n<=0:
-        return []
-    elif 3**i>n:
-        return lst
-    else:
-        if 3**i<=n:
-            lst.append(3**i)
-    	return powerof3ton(n,i+1,lst)
 
 print(recursion_powersof3ton(8.9999))
